@@ -6,12 +6,12 @@ module.exports = {
     return Team_Info
       .findAll({
         include: [{
-          model: User_Info,
-          as: 'members'
+          model: User_Info
+          
         }],
         order: [
           ['createdAt', 'DESC'],
-          [{ model: User_Info, as: 'members' }, 'createdAt', 'DESC'],
+          [{ model: User_Info }, 'createdAt', 'DESC'],
         ],
       })
       .then((team_infos) => res.status(200).send(team_infos))
