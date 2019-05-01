@@ -14,7 +14,7 @@ router.delete('/api/teamlist/:id', team_infoController.delete);
 router.post('/api/team/add_with_users', team_infoController.addWithUsers);
 router.get('/api/users', user_infoController.list);
 router.get('/api/users/:id', user_infoController.getById);
-// router.post('/api/users', user_infoController.add);
+router.post('/api/users', user_infoController.add);
 router.post('/api/users/:id', user_infoController.update);
 router.delete('/api/users/:id', user_infoController.delete);
 module.exports = router;
