@@ -1,6 +1,10 @@
 'use strict';
 module.exports = (sequelize, DataTypes) => {
   const Team_Info = sequelize.define('Team_Info', {
+    // id: {
+    //   type: DataTypes.INTEGER,
+    //   primaryKey: true
+    // },
     team_name: DataTypes.STRING,
     team_dis: DataTypes.STRING,
     team_status: DataTypes.STRING

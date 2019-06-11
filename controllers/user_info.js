@@ -36,7 +36,7 @@ module.exports = {
         emp_email: req.body.emp_email,
         emp_avatar: req.body.emp_avatar,
         emp_role: req.body.emp_role,
-        team_id: req.body.team_id,
+        teamid: req.body.teamid,
         emp_status: req.body.emp_status,
         emp_dob: req.body.emp_dob,
         emp_pass: req.body.emp_pass,
@@ -49,7 +49,7 @@ module.exports = {
       })
       .then((user) => {
           res.status(201).send(user)},
-          console.log(req.body)
+          // console.log(user)
 
       )
       .catch((error) => res.status(400).send(error));
@@ -65,7 +65,7 @@ module.exports = {
           emp_email: req.body.emp_email,
           emp_avatar: req.body.emp_avatar,
           emp_role: req.body.emp_role,
-          team_id: req.body.team_id,
+          teamid: req.body.teamid,
           emp_status: req.body.emp_status,
           emp_dob: req.body.emp_dob,
           emp_pass: req.body.emp_pass,

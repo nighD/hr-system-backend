@@ -24,6 +24,10 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'teamid',
       onDelete: 'CASCADE'
     });
+    User_Info.hasMany(models.emp_att_detail,{
+      foreignKey: 'emp_uid',
+      
+    });
   };
   return User_Info;
 };
