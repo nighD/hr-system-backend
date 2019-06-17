@@ -21,12 +21,15 @@ module.exports = (sequelize, DataTypes) => {
   User_Info.associate = function(models) {
     // associations can be defined here
     User_Info.belongsTo(models.Team_Info,{
+      as: 'member',
       foreignKey: 'teamid',
       onDelete: 'CASCADE'
     });
     User_Info.hasMany(models.emp_att_detail,{
       foreignKey: 'emp_uid',
-      
+    });
+    User_Info.hasMany(models.Leaves,{
+      foreignKey: 'emp_uid',
     });
   };
   return User_Info;

@@ -4,8 +4,11 @@ var path = require('path');
 var cookieParser = require('cookie-parser');
 var logger = require('morgan');
 
-var indexRouter = require('./routes/index');
-var usersRouter = require('./routes/users');
+// var indexRouter = require('./routes/index');
+import usersRouter from './routes/users';
+import indexRouter from './routes/index';
+import teamsRouter from './routes/teams';
+import leavesRouter from './routes/leaves';
 const scheduler = require('./scheduler');
 var app = express();
 app.locals.moment = require('moment');
@@ -24,7 +27,9 @@ app.use(function (req, res, next) {
   next();
 });
 app.use('/', indexRouter);
-app.use('/users', usersRouter);
+app.use('/api/users', usersRouter);
+app.use('/api/teams', teamsRouter);
+app.use('/api/leaves', leavesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

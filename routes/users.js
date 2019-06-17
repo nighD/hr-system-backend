@@ -1,9 +1,13 @@
-var express = require('express');
-var router = express.Router();
+import { Router } from 'express';
+import UserController from '../controllers/UserController';
 
-/* GET users listing. */
-router.get('/', function(req, res, next) {
-  res.send('respond with a resource');
-});
+const router = Router();
 
-module.exports = router;
+router.get('/', UserController.getAllUsers);
+router.get('/manager/', UserController.getManagers);
+router.post('/', UserController.addUser);
+router.get('/:id', UserController.getAUser);
+router.put('/:id', UserController.updatedUser);
+// router.delete('/:id', UserController.deleteUser);
+
+export default router;
