@@ -21,7 +21,8 @@
     "nodemon": "^1.19.1",
     "pg": "^7.10.0",
     "pg-hstore": "^2.3.2",
-    "sequelize": "^5.7.4"
+    "sequelize": "^5.7.4",
+    "sequelize-cli": "^5.5.0"
   },
   "devDependencies": {
     "@babel/cli": "^7.4.4",
