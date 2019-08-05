@@ -1,5 +1,8 @@
+import { sequelize } from '../models';
+
 // import database from '../src/models';
 var database = require('../models');
+const Op = database.sequelize.Op;
  class UserService {
   static async getAllUsers() {
     try {
@@ -45,6 +48,18 @@ var database = require('../models');
       throw error;
     }
   }
+
+  static async getAUserByName(firstName) {
+    console.log(firstName)
+    
+    try {
+      const theUser = await database.sequelize.query(`select * from "User_Infos" where "User_Infos"."emp_fname" like '%`+firstName+`%' `, { type: sequelize.QueryTypes.SELECT});
+      return theUser;
+    } catch (error) {
+      throw error;
+    }
+  }
+
   static async getManagers() {
     try {
       const theUser = await database.User_Info.findAll({

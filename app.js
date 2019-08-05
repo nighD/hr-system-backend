@@ -9,6 +9,7 @@ import usersRouter from './routes/users';
 import indexRouter from './routes/index';
 import teamsRouter from './routes/teams';
 import leavesRouter from './routes/leaves';
+import goalsRouter from './routes/goals';
 const scheduler = require('./scheduler');
 var app = express();
 app.locals.moment = require('moment');
@@ -24,12 +25,14 @@ app.use(express.static(path.join(__dirname, 'public')));
 app.use(function (req, res, next) {
   res.header("Access-Control-Allow-Origin", "http://localhost:3001");
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept");
+  res.header('Access-Control-Allow-Methods', 'PUT, POST, GET, DELETE, OPTIONS');
   next();
 });
 app.use('/', indexRouter);
 app.use('/api/users', usersRouter);
 app.use('/api/teams', teamsRouter);
 app.use('/api/leaves', leavesRouter);
+app.use('/api/goals', goalsRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

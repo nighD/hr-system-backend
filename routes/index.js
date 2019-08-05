@@ -9,17 +9,7 @@ const eventsController = require('../controllers').events;
 router.get('/', function(req, res, next) {
   res.render('index', { title: 'Express' });
 });
-// router.get('/api/teamlist', team_infoController.list);
-// router.get('/api/teamlist/:id', team_infoController.getById);
-// router.post('/api/teamlist', team_infoController.add);
-// router.put('/api/teamlist/:id', team_infoController.update);
-// router.delete('/api/teamlist/:id', team_infoController.delete);
 router.post('/api/team/add_with_users', team_infoController.addWithUsers);
-// router.get('/api/users',UserController.getAllUser);
-// router.get('/api/users/:id', UserController.getAUser);
-// router.post('/api/users', user_infoController.addUser);
-// router.post('/api/users/:id', user_infoController.updatedUser);
-// router.delete('/api/users/:id', user_infoController.deleteUser);
 router.get('/api/emp_att_detail/:id', emp_att_detailController.getById);
 router.post('/api/emp_att_detail', emp_att_detailController.add);
 router.get('/api/events', eventsController.getById);

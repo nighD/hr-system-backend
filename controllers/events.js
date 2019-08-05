@@ -7,7 +7,7 @@ module.exports = {
           .then((detail) => {
             if (!detail) {
               return res.status(404).send({
-                message: 'user Not Found',
+                message: 'events Not Found',
               });
             }
             return res.status(200).send(detail);

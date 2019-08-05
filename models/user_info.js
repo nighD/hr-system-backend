@@ -31,6 +31,9 @@ module.exports = (sequelize, DataTypes) => {
     User_Info.hasMany(models.Leaves,{
       foreignKey: 'emp_uid',
     });
+    User_Info.hasMany(models.goals_info,{
+      foreignKey: 'emp_uid',
+    });
   };
   return User_Info;
 };

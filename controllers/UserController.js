@@ -79,6 +79,29 @@ export default class UserController {
       return util.send(res);
     }
   }
+
+  static async getAUserByName(req, res) {
+    const  firstName  = req.params.name;
+    if (!(firstName)) {
+      util.setError(400, 'Please input a valid numeric value');
+      return util.send(res);
+    }
+
+    try {
+      const theUser = await UserService.getAUserByName(firstName);
+
+      if (!theUser) {
+        util.setError(404, `Cannot find User with the first name ${firstName}`);
+      } else {
+        util.setSuccess(200, 'Found User', theUser);
+      }
+      return util.send(res);
+    } catch (error) {
+      util.setError(404, error);
+      return util.send(res);
+    }
+  }
+
   static async getManagers(req, res) {
     // const  id  = req.params.id;
     // if (!(id)) {
