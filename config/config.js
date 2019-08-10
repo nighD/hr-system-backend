@@ -1,9 +1,9 @@
 
 module.exports = {
   development: {
-    username: "me",
-    password: "admin",
-    database: "my_database",
+    username: "hr_admin",
+    password: "hr_password",
+    database: "hr_database",
     host: "127.0.0.1",
     dialect: "postgres"
   },
