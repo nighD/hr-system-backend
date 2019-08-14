@@ -10,6 +10,7 @@ import indexRouter from './routes/index';
 import teamsRouter from './routes/teams';
 import leavesRouter from './routes/leaves';
 import goalsRouter from './routes/goals';
+import payroll_typesRouter from './routes/payroll_types';
 const scheduler = require('./scheduler');
 var app = express();
 app.locals.moment = require('moment');
@@ -33,6 +34,7 @@ app.use('/api/users', usersRouter);
 app.use('/api/teams', teamsRouter);
 app.use('/api/leaves', leavesRouter);
 app.use('/api/goals', goalsRouter);
+app.use('/api/payroll_types',payroll_typesRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

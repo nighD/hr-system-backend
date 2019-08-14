@@ -26,7 +26,6 @@ module.exports = {
             note: req.body.note,
             start_time: req.body.start_time,
             end_time: req.body.end_time,
-            
           })
           .then((detail) => {
               res.status(201).send(detail)},

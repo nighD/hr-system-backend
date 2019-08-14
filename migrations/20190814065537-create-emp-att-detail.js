@@ -12,7 +12,7 @@ module.exports = {
         type: Sequelize.STRING
       },
       date_att: {
-        type: Sequelize.DATE
+        type: Sequelize.DATEONLY
       },
       duration: {
         type: Sequelize.FLOAT
@@ -21,10 +21,10 @@ module.exports = {
         type: Sequelize.STRING
       },
       start_time: {
-        type: Sequelize.DATE
+        type: Sequelize.TIME
       },
       end_time: {
-        type: Sequelize.DATE
+        type: Sequelize.TIME
       },
       createdAt: {
         allowNull: false,

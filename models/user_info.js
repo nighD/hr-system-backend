@@ -25,15 +25,14 @@ module.exports = (sequelize, DataTypes) => {
       foreignKey: 'teamid',
       onDelete: 'CASCADE'
     });
-    User_Info.hasMany(models.emp_att_detail,{
-      foreignKey: 'emp_uid',
-    });
+    User_Info.hasMany(models.emp_att_detail, {foreignKey: 'emp_uid', sourceKey: 'emp_uid'});
     User_Info.hasMany(models.Leaves,{
       foreignKey: 'emp_uid',
     });
     User_Info.hasMany(models.goals_info,{
       foreignKey: 'emp_uid',
     });
+    User_Info.hasOne(models.Payroll_Type, {foreignKey: 'emp_uid', sourceKey: 'emp_uid'});
   };
   return User_Info;
 };

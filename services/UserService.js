@@ -1,12 +1,25 @@
 import { sequelize } from '../models';
-
+// const { Op } = sequelize = require('sequelize');
+// sequelize.DATE._stringify = function _stringify(date, options) {
+//   return this._applyTimezone(date, options).format('YYYY-MM-DD');
+// };
 // import database from '../src/models';
 var database = require('../models');
+const dateFormat = require('dateformat');
 const Op = database.sequelize.Op;
  class UserService {
   static async getAllUsers() {
+    // var startDate = dateFormat(new Date('2019-06-01'),"yyyy-mm-dd");
+    // var endDate = dateFormat(new Date('2019-06-30'),"yyyy-mm-dd");
+    var startDate =new Date('2019-06-01');
+    var endDate = new Date('2019-06-30');
     try {
-      return await database.User_Info.findAll();
+      return await database.User_Info.findAll({
+        include: [{
+            model: database.Payroll_Type,
+
+        }],
+      });
     } catch (error) {
       throw error;
     }

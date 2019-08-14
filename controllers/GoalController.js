@@ -22,7 +22,7 @@ export default class GoalController {
 
   static async addGoal(req, res) {
     const newGoal = req.body;
-    console.log(newGoal);
+    
     try {
       const createdGoal = await GoalService.addGoal(newGoal);
       util.setSuccess(201, 'Goal Added!', createdGoal);

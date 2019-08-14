@@ -26,7 +26,7 @@ export default class TeamController {
     // }
     const newTeam = req.body;
     try {
-      const createdTeam = await UserService.addTeam(newTeam);
+      const createdTeam = await TeamService.addTeam(newTeam);
       util.setSuccess(201, 'Team Added!', createdTeam);
       return util.send(res);
     } catch (error) {

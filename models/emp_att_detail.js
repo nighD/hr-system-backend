@@ -5,8 +5,8 @@ module.exports = (sequelize, DataTypes) => {
     date_att: DataTypes.DATE,
     duration: DataTypes.FLOAT,
     note: DataTypes.STRING,
-    start_time: DataTypes.DATE,
-    end_time: DataTypes.DATE
+    start_time: DataTypes.TIME,
+    end_time: DataTypes.TIME
   }, {});
   emp_att_detail.associate = function(models) {
     // associations can be defined here
