@@ -5,7 +5,6 @@ import { sequelize } from '../models';
 // };
 // import database from '../src/models';
 var database = require('../models');
-const dateFormat = require('dateformat');
 const Op = database.sequelize.Op;
  class UserService {
   static async getAllUsers() {
