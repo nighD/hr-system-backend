@@ -39,7 +39,7 @@ const Op = database.sequelize.Op;
       });
 
       if (UserToUpdate) {
-        await database.User_Info.update(updateUser, { where: { emp_uid: Number(id) } });
+        await database.User_Info.update(updateUser, { where: { emp_uid: id } });
 
         return updateUser;
       }

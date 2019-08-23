@@ -37,7 +37,8 @@ export default class UserController {
 
   static async updatedUser(req, res) {
     const alteredUser = req.body;
-    const { id } = req.params.id;
+    const  id  = req.params.id;
+    console.log(req.params.id);
     if (!(id)) {
       util.setError(400, 'Please input a valid numeric value');
       return util.send(res);
@@ -47,7 +48,7 @@ export default class UserController {
       if (!updateUser) {
         util.setError(404, `Cannot find User with the id: ${id}`);
       } else {
-        util.setSuccess(200, 'Book updated', updateUser);
+        util.setSuccess(200, 'User updated', updateUser);
       }
       return util.send(res);
     } catch (error) {
