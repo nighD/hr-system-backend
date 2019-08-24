@@ -6,7 +6,7 @@
     "start": "node ./bin/www",
     "dev": "nodemon --exec babel-node ./bin/www",
     "clean": "rm -rf build && mkdir build",
-    "build": "babel . --out-file production.js --ignore 'node_modules'",
+    "build": "npm run clean && npm run build-server",
     "build-server": "babel -d ./build . -s --ignore 'node_modules' ./server -s",
     "migrate": "sequelize db:migrate"
   },
