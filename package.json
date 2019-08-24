@@ -5,6 +5,7 @@
   "scripts": {
     "start": "node ./bin/www",
     "dev": "nodemon --exec babel-node ./bin/www",
+    "product": "babel-node ./bin/www",
     "clean": "rm -rf build && mkdir build",
     "build": "npm run clean && npm run build-server",
     "build-server": "babel -d ./build . -s --ignore 'node_modules'",
