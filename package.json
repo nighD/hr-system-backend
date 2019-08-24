@@ -7,7 +7,8 @@
     "dev": "nodemon --exec babel-node ./bin/www",
     "clean": "rm -rf build && mkdir build",
     "build": "babel . --out-file production.js --ignore 'node_modules'",
-    "build-server": "babel -d ./build . -s --ignore 'node_modules'"
+    "build-server": "babel -d ./build . -s --ignore 'node_modules'",
+    "migrate": "sequelize db:migrate"
   },
   "dependencies": {
     "cookie-parser": "~1.4.3",
